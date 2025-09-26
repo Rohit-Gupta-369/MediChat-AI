@@ -101,7 +101,7 @@ async function sendMessage() {
   } catch (error) {
     typingIndicator.style.display = "none";
     addMessage(
-      "Sorry, I'm experiencing technical difficulties. Please try again shortly.",
+      "Sorry, I'm experiencing technical difficulties. Please try again shortly.(Server Issue)",
       "bot"
     );
     console.error("Error:", error);
