@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediChat AI - Virtual Medical Consultation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-stethoscope"></i>
+          <span>MediChat AI</span>
+        </div>
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <main>
+        <section id="home">
+          <div class="disclaimer">
+            <i class="fas fa-exclamation-circle"></i>
+            This is a virtual assistant for informational purposes only. Not a substitute for professional medical advice.
+          </div>
+          
+          <div class="container">
+            <div class="card" onclick="openChat('Cardiologist')">
+              <i class="fas fa-heartbeat"></i>
+              <h2>Cardiologist</h2>
+              <p>Specialized in heart and cardiovascular system conditions</p>
+            </div>
+            <div class="card" onclick="openChat('Neurologist')">
+              <i class="fas fa-brain"></i>
+              <h2>Neurologist</h2>
+              <p>Expert in disorders of the nervous system and brain</p>
+            </div>
+            <div class="card" onclick="openChat('Dermatologist')">
+              <i class="fas fa-allergies"></i>
+              <h2>Dermatologist</h2>
+              <p>Specialized in skin, hair, and nail conditions</p>
+            </div>
+            <div class="card" onclick="openChat('Pediatrician')">
+              <i class="fas fa-baby"></i>
+              <h2>Pediatrician</h2>
+              <p>Expert in children's health and development</p>
+            </div>
+            <div class="card" onclick="openChat('General Practitioner')">
+              <i class="fas fa-user-md"></i>
+              <h2>General Practitioner</h2>
+              <p>General health concerns and preventive medicine</p>
+            </div>
+            <div class="card" onclick="openChat('Psychiatrist')">
+              <i class="fas fa-head-side-virus"></i>
+              <h2>Psychiatrist</h2>
+              <p>Specialized in mental health and emotional disorders</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="chatRoom" class="chat-room">
+          <section class="charSide">
+            <div class="boxAlign">
+              <button class="back-btn" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i> Back
+              </button>
+              <div class="chat-header" id="chatDoctor">Chat Room</div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+              <div class="bot-message message">
+                Hello! I'm your virtual medical assistant. How can I help you today?
+                <div class="message-time" id="initial-time"></div>
+              </div>
+            </div>
+            <div class="typing-indicator" id="typingIndicator">
+              <span>Doctor is typing</span>
+              <span class="typing-dots">
+                <i class="fas fa-ellipsis-h"></i>
+              </span>
+            </div>
+            <div class="chat-input">
+              <input
+                type="text"
+                id="userInput"
+                placeholder="Type your health question..."
+                onkeypress="handleKeyPress(event)"
+              />
+              <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>© 2023 MediChat AI | Virtual Medical Consultation</p>
+    </footer>
+
+   <script src="script.js"></script>
+  </body>
+</html>
